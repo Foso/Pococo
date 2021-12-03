@@ -7,8 +7,14 @@ data class MyFunction(
     val annotations: List<MyAnnotation>,
     val comment: String?,
     val myParam: List<MyParam>,
-    val description : String?=null,
-    val body : String?=null
+    val description: String? = null,
+    val body: String? = null
 )
 
-data class MyParam(val name: String, val type: String, val myAnnotation: MyAnnotation?, val default: String? = null,val description:String?=null)
+data class MyParam(
+    val name: String,
+    val type: String,
+    val myAnnotation: MyAnnotation?,
+    val default: String? = null,
+    val description: String? = null
+)

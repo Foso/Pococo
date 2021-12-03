@@ -5,7 +5,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import de.jensklingenberg.pococo.converter.retrofit.model.MyAnnotation
 import de.jensklingenberg.pococo.converter.retrofit.model.MyFunction
 import de.jensklingenberg.pococo.converter.retrofit.model.MyParam
-import de.jensklingenberg.pococo.converter.retrofit.model.RetrofitAnnoation
+import de.jensklingenberg.pococo.converter.retrofit.model.RetrofitAnnotation
 import de.jensklingenberg.pococo.core.model.CollectionData
 import de.jensklingenberg.pococo.core.model.ItemItem
 import de.jensklingenberg.pococo.core.model.Request
@@ -15,7 +15,7 @@ import java.util.*
 
 
 fun main() {
-    readFile("/home/jens/Code/2021/Pococo2/retrofit/src/main/kotlin/de/jensklingenberg/pococo/converter/retrofit/collection/bitrise.json")
+    readFile("/home/jens/Code/2021/jk/Pococo/retrofit/src/main/kotlin/de/jensklingenberg/pococo/converter/retrofit/collection/bitrise.json")
 }
 
 fun readFile(filePath: String) {
@@ -151,7 +151,7 @@ fun getMyFunction(
                 param,
                 type = "String",
                 description = "",
-                myAnnotation = MyAnnotation("@" + RetrofitAnnoation.PATH.annotationName, param ?: "")
+                myAnnotation = MyAnnotation("@" + RetrofitAnnotation.PATH.annotationName, param ?: "")
             )
         )
         urlValue = urlValue.replace(it, "{${param}}")
@@ -178,7 +178,7 @@ fun getMyFunction(
         MyParam(
             name = cleanParamName(it.key ?: ""),
             type = "String",
-            MyAnnotation("@" + RetrofitAnnoation.QUERY.annotationName, it.key ?: ""),
+            MyAnnotation("@" + RetrofitAnnotation.QUERY.annotationName, it.key ?: ""),
             description = it.description
         )
     }?.let {
